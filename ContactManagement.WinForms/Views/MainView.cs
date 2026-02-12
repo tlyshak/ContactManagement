@@ -1,15 +1,14 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
-using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ContactManagement.Application.Interfaces.Presenters;
 using ContactManagement.Application.Interfaces.Views;
 using ContactManagement.Application.Models;
 using ContactManagement.WinForms.Controls;
 using ContactManagement.WinForms.Helpers;
+using ContactManagement.WinForms.Services;
 using ContactManagement.WinForms.Ui;
-using ContactManagement.WinForms.UI;
 
 namespace ContactManagement.WinForms.Views
 {
@@ -203,7 +202,7 @@ namespace ContactManagement.WinForms.Views
             }
         }
 
-        private void btnCsvExport_Click(object sender, EventArgs e)
+        private async void btnCsvExport_Click(object sender, EventArgs e)
         {
             var search = txtSearch.Text;
             var category = cmbCategory.SelectedItem?.ToString() ?? "All";
@@ -216,28 +215,21 @@ namespace ContactManagement.WinForms.Views
                 return;
             }
 
-            using (var sfd = new SaveFileDialog())
+            using (var dlg = new SaveFileDialog())
             {
-                sfd.Title = "Export contacts";
-                sfd.Filter = "CSV files (*.csv)|*.csv|All files (*.*)|*.*";
-                sfd.FileName = "contacts.csv";
-                sfd.OverwritePrompt = true;
+                dlg.Filter = "CSV (*.csv)|*.csv";
+                dlg.FileName = "contacts.csv";
 
-                if (sfd.ShowDialog(this) != DialogResult.OK)
+                if (dlg.ShowDialog() != DialogResult.OK)
                     return;
 
-                try
-                {
-                    var csv = CsvExporter.BuildContactsCsv(contacts);
+                btnCsvExport.Enabled = false;
 
-                    File.WriteAllText(sfd.FileName, csv, new UTF8Encoding(encoderShouldEmitUTF8Identifier: true));
+                await Task.Run(() => CsvExportService.Export(dlg.FileName, contacts));
 
-                    MessageBox.Show("Export completed.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                catch (Exception)
-                {
-                    MessageBox.Show("Error exporting contacts.", "Export", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                btnCsvExport.Enabled = true;
+
+                MessageBox.Show("Export completed.");
             }
         }
 

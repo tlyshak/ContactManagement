@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using ContactManagement.Application.Interfaces.Repositories;
 using ContactManagement.Application.Interfaces.Services;
 using ContactManagement.Application.Models;
@@ -15,52 +14,24 @@ namespace ContactManagement.Application.Services
             _repository = repository;
         }
 
-
         public IList<Contact> GetContacts(string search, string category, string sort)
         {
-            try
-            {
-                return _repository.GetContacts(search, category, sort);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return _repository.GetContacts(search, category, sort);
         }
+
         public void RemoveContact(int id)
         {
-            try
-            {
-                _repository.RemoveContact(id);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            _repository.RemoveContact(id);
         }
 
         public int CreateContact(Contact contact)
         {
-            try
-            {
-                return _repository.CreateContact(contact);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return _repository.CreateContact(contact);
         }
 
         public void UpdateContact(Contact contact)
         {
-            try
-            {
-                _repository.UpdateContact(contact);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            _repository.UpdateContact(contact);
         }
     }
 }

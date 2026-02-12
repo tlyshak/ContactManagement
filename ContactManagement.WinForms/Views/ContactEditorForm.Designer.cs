@@ -48,13 +48,13 @@
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblNotes = new System.Windows.Forms.Label();
             this.txtNotes = new System.Windows.Forms.TextBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnCancel = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -145,7 +145,7 @@
             this.txtFirstName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtFirstName.Location = new System.Drawing.Point(139, 21);
             this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(120, 20);
+            this.txtFirstName.Size = new System.Drawing.Size(269, 20);
             this.txtFirstName.TabIndex = 4;
             // 
             // txtLastName
@@ -153,7 +153,7 @@
             this.txtLastName.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtLastName.Location = new System.Drawing.Point(139, 51);
             this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(120, 20);
+            this.txtLastName.Size = new System.Drawing.Size(269, 20);
             this.txtLastName.TabIndex = 5;
             // 
             // txtEmail
@@ -161,7 +161,7 @@
             this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtEmail.Location = new System.Drawing.Point(139, 81);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(120, 20);
+            this.txtEmail.Size = new System.Drawing.Size(269, 20);
             this.txtEmail.TabIndex = 6;
             // 
             // txtPhone
@@ -169,7 +169,7 @@
             this.txtPhone.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtPhone.Location = new System.Drawing.Point(139, 111);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(120, 20);
+            this.txtPhone.Size = new System.Drawing.Size(269, 20);
             this.txtPhone.TabIndex = 7;
             // 
             // lblCategory
@@ -188,7 +188,7 @@
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(139, 140);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategory.Size = new System.Drawing.Size(269, 21);
             this.cmbCategory.TabIndex = 9;
             // 
             // lblCompany
@@ -206,7 +206,7 @@
             this.txtCompany.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtCompany.Location = new System.Drawing.Point(139, 171);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(120, 20);
+            this.txtCompany.Size = new System.Drawing.Size(269, 20);
             this.txtCompany.TabIndex = 11;
             // 
             // lblWebsite
@@ -224,7 +224,7 @@
             this.txtWebsite.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtWebsite.Location = new System.Drawing.Point(139, 201);
             this.txtWebsite.Name = "txtWebsite";
-            this.txtWebsite.Size = new System.Drawing.Size(120, 20);
+            this.txtWebsite.Size = new System.Drawing.Size(269, 20);
             this.txtWebsite.TabIndex = 13;
             // 
             // lblAddress
@@ -242,7 +242,7 @@
             this.txtAddress.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtAddress.Location = new System.Drawing.Point(139, 231);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(120, 20);
+            this.txtAddress.Size = new System.Drawing.Size(269, 20);
             this.txtAddress.TabIndex = 15;
             // 
             // lblNotes
@@ -265,21 +265,6 @@
             this.txtNotes.Size = new System.Drawing.Size(269, 99);
             this.txtNotes.TabIndex = 17;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.btnCancel.Location = new System.Drawing.Point(113, 10);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            // 
             // tableLayoutPanel2
             // 
             this.tableLayoutPanel2.ColumnCount = 2;
@@ -297,6 +282,17 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(396, 44);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
+            // btnCancel
+            // 
+            this.btnCancel.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.btnCancel.Location = new System.Drawing.Point(113, 10);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 1;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            // 
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -308,6 +304,10 @@
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ContactEditorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -316,14 +316,15 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(450, 480);
             this.Name = "ContactEditorForm";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ContactEditorForm";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
